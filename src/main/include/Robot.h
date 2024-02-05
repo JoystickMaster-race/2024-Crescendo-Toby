@@ -40,7 +40,7 @@ class Robot : public frc::TimedRobot {
   frc::EventLoop loop;
   //Shooter *shooter;
 
-  Intake* intake;
+ // Intake* intake;
   frc::SendableChooser<std::string> m_chooser;
 
   frc::Field2d m_field;

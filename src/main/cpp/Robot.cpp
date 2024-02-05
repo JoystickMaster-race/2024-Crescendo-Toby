@@ -93,10 +93,10 @@ void Robot::RobotInit() {
   // backRight = new ctre::phoenix6::hardware::TalonFX(3, "Drivebase");
   lastPeriodic = wom::now();
 
-  intake = new Intake(robotmap.intakeSystem.config);
-  wom::BehaviourScheduler::GetInstance()->Register(intake);
-  intake->SetDefaultBehaviour(
-      [this]() { return wom::make<IntakeManualControl>(intake, robotmap.controllers.codriver); });
+  // intake = new Intake(robotmap.intakeSystem.config);
+  // wom::BehaviourScheduler::GetInstance()->Register(intake);
+  // intake->SetDefaultBehaviour(
+  //     [this]() { return wom::make<IntakeManualControl>(intake, robotmap.controllers.codriver); });
 }
 
 void Robot::RobotPeriodic() {
@@ -116,7 +116,7 @@ void Robot::RobotPeriodic() {
 
   _swerveDrive->OnUpdate(dt);
   alphaArm->OnUpdate(dt);
-  intake->OnUpdate(dt);
+  //intake->OnUpdate(dt);
  // std::cout << robotmap.alphaArmSystem.armEncoder.GetDistance() << std::endl;
   
 }
